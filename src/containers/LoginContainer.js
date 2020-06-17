@@ -94,7 +94,7 @@ class LoginContainer extends Component {
             <img src={bg} alt="bg" />
           </div>
           <div className="login-content">
-            <form name="form" onSubmit={this.handleSubmit}>
+            <form onSubmit={this.handleSubmit}>
               <img src={avatar} alt="avatar" />
               <h2>Welcome</h2>
               <div className={classNameForNameFocus}>
@@ -129,8 +129,8 @@ class LoginContainer extends Component {
                   />
                 </div>
               </div>
-              <a className="link link-regist" href="/register">Register?</a>
-              <a className="link link-forgot" href="/">Forgot Password?</a>
+              <a className="link-regist" href="/register">Create Account?</a>
+              <a className="link-forgot" href="/">Forgot Password?</a>
               <input type="submit" className="btn-login" value="Login" />
             </form>
           </div>
