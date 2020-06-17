@@ -15,6 +15,8 @@ class LoginContainer extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      focusName: false,
+      focusPass: false,
       password: '',
       username: '',
       submitted: false,
@@ -22,6 +24,10 @@ class LoginContainer extends Component {
     this.onChangePassword = this.onChangePassword.bind(this);
     this.onChangeName = this.onChangeName.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.onFocusName = this.onFocusName.bind(this);
+    this.onBlurName = this.onBlurName.bind(this);
+    this.onFocusPass = this.onFocusPass.bind(this);
+    this.onBlurPass = this.onBlurPass.bind(this);
   }
 
   onChangePassword(event) {
@@ -46,57 +52,92 @@ class LoginContainer extends Component {
     }
   }
 
+  onFocusName() {
+    this.setState({
+      ...this.state,
+      focusName: true,
+    })
+  }
 
-render() {
-  return (
-    <div>
-      <title>My App Login Form</title>
-      <img className="wave-img" src={wave} alt="wave" />
-      <div className="container">
-        <div className="img">
-          <img src={bg} alt="bg" />
-        </div>
-        <div className="login-content">
-          <form name="form" onSubmit={this.handleSubmit}>
-            <img src={avatar} alt="avatar" />
-            <h2>Welcome</h2>
-            <div className="input-div one">
-              <div className="i">
-                <FontAwesomeIcon icon={faUser} />
+  onBlurName() {
+    const focusName = this.state.username ? true : false;
+    this.setState({
+      ...this.state,
+      focusName,
+    })
+  }
+
+  onFocusPass() {
+    this.setState({
+      ...this.state,
+      focusPass: true,
+    })
+  }
+
+  onBlurPass() {
+    const focusPass = this.state.password ? true : false;
+    this.setState({
+      ...this.state,
+      focusPass,
+    })
+  }
+
+  render() {
+    const classNameForNameFocus = this.state.focusName ? "input-div focus" : 'input-div one';
+    const classNameForPassFocus = this.state.focusPass ? "input-div focus" : 'input-div pass';
+    return (
+      <div>
+        <title>My App Login Form</title>
+        <img className="wave-img" src={wave} alt="wave" />
+        <div className="container">
+          <div className="img">
+            <img src={bg} alt="bg" />
+          </div>
+          <div className="login-content">
+            <form name="form" onSubmit={this.handleSubmit}>
+              <img src={avatar} alt="avatar" />
+              <h2>Welcome</h2>
+              <div className={classNameForNameFocus}>
+                <div className="icon">
+                  <FontAwesomeIcon className="icon-i" icon={faUser} />
+                </div>
+                <div>
+                  <h5>Username</h5>
+                  <input
+                    type="text"
+                    className="input"
+                    value={this.state.username}
+                    onChange={this.onChangeName}
+                    onFocus={this.onFocusName}
+                    onBlur={this.onBlurName}
+                  />
+                </div>
               </div>
-              <div className="div">
-                <input
-                  type="text"
-                  className="input"
-                  placeholder="Username"
-                  value={this.state.username}
-                  onChange={this.onChangeName}
-                />
+              <div className={classNameForPassFocus}>
+                <div className="icon">
+                  <FontAwesomeIcon className="icon-i" icon={faLock} />
+                </div>
+                <div>
+                  <h5>Password</h5>
+                  <input
+                    type="password"
+                    className="input"
+                    value={this.state.password}
+                    onChange={this.onChangePassword}
+                    onFocus={this.onFocusPass}
+                    onBlur={this.onBlurPass}
+                  />
+                </div>
               </div>
-            </div>
-            <div className="input-div pass">
-              <div className="i">
-                <FontAwesomeIcon icon={faLock} />
-              </div>
-              <div className="div">
-                <input
-                  type="password"
-                  className="input"
-                  placeholder="Password"
-                  value={this.state.password}
-                  onChange={this.onChangePassword}
-                />
-              </div>
-            </div>
-            <a className="link link-regist" href="/register">Register?</a>
-            <a className="link link-forgot" href="/">Forgot Password?</a>
-            <input type="submit" className="btn-login" value="Login" />
-          </form>
+              <a className="link link-regist" href="/register">Register?</a>
+              <a className="link link-forgot" href="/">Forgot Password?</a>
+              <input type="submit" className="btn-login" value="Login" />
+            </form>
+          </div>
         </div>
       </div>
-    </div>
-  );
-}
+    );
+  }
 }
 
 function mapStateToProps(state) {

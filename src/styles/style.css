@@ -33,15 +33,15 @@ body{
 	align-items: center;
 }
 
+.img img{
+	width: 500px;
+}
+
 .login-content{
 	display: flex;
 	justify-content: flex-start;
 	align-items: center;
 	text-align: center;
-}
-
-.img img{
-	width: 500px;
 }
 
 form{
@@ -68,18 +68,23 @@ form{
     border-bottom: 2px solid #d9d9d9;
 }
 
-.login-content .input-div.one{
+.input-div.one{
 	margin-top: 0;
 }
 
-.i{
+
+.input-div.pass{
+	margin-bottom: 4px;
+}
+
+.icon{
 	color: #d9d9d9;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 }
 
-.i i{
+.icon-i{
 	transition: .3s;
 }
 
@@ -121,19 +126,14 @@ form{
 }
 
 .input-div.focus > div > h5{
-	top: -5px;
+	top: -12px;
 	font-size: 15px;
 }
 
-.input-div.focus > .i > i{
+.input-div.focus > .icon > .icon-i{
 	color: #38d39f;
 }
 
-::placeholder {
-	color: transparent;
-	text-shadow: 0 0 0px rgba(0,0,0,0.2);
-	font-size: 1rem;
-  }
 
 .input-div > div > input{
 	position: absolute;
@@ -148,10 +148,6 @@ form{
 	font-size: 1.2rem;
 	color: #555;
 	font-family: 'poppins', sans-serif;
-}
-
-.input-div.pass{
-	margin-bottom: 4px;
 }
 
 
