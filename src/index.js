@@ -4,6 +4,8 @@ import { Provider } from 'react-redux';
 import { store } from './_helpers';
 import { App } from './App';
 
+// Importing the Bootstrap CSS
+import 'bootstrap/dist/css/bootstrap.min.css';
 // setup fake backend
 import { configureFakeBackend } from './_helpers';
 configureFakeBackend();

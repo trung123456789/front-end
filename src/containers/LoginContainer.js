@@ -83,8 +83,8 @@ class LoginContainer extends Component {
   }
 
   render() {
-    const classNameForNameFocus = this.state.focusName ? "input-div focus" : 'input-div one';
-    const classNameForPassFocus = this.state.focusPass ? "input-div focus" : 'input-div pass';
+    const classNameForNameFocus = this.state.focusName ? "input-div focus" : 'input-div';
+    const classNameForPassFocus = this.state.focusPass ? "input-div focus" : 'input-div';
     return (
       <div>
         <title>My App Login Form</title>
@@ -98,6 +98,7 @@ class LoginContainer extends Component {
               <img src={avatar} alt="avatar" />
               <h2>Welcome</h2>
               <div className={classNameForNameFocus}>
+              {/* <div className="input-div focus"> */}
                 <div className="icon">
                   <FontAwesomeIcon className="icon-i" icon={faUser} />
                 </div>
@@ -105,7 +106,7 @@ class LoginContainer extends Component {
                   <h5>Username</h5>
                   <input
                     type="text"
-                    className="input"
+                    className="input-div-login"
                     value={this.state.username}
                     onChange={this.onChangeName}
                     onFocus={this.onFocusName}
@@ -114,6 +115,7 @@ class LoginContainer extends Component {
                 </div>
               </div>
               <div className={classNameForPassFocus}>
+              {/* <div className="input-div focus"> */}
                 <div className="icon">
                   <FontAwesomeIcon className="icon-i" icon={faLock} />
                 </div>
@@ -121,7 +123,7 @@ class LoginContainer extends Component {
                   <h5>Password</h5>
                   <input
                     type="password"
-                    className="input"
+                    className="input-div-login"
                     value={this.state.password}
                     onChange={this.onChangePassword}
                     onFocus={this.onFocusPass}

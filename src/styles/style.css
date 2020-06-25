@@ -63,18 +63,9 @@ form{
 	position: relative;
     display: grid;
     grid-template-columns: 7% 93%;
-    margin: 25px 0;
+    margin-top: 30px;
     padding: 5px 0;
     border-bottom: 2px solid #d9d9d9;
-}
-
-.input-div.one{
-	margin-top: 0;
-}
-
-
-.input-div.pass{
-	margin-bottom: 4px;
 }
 
 .icon{
@@ -134,8 +125,11 @@ form{
 	color: #38d39f;
 }
 
+.input-register > input{
+	font-size: 0.5rem;
+}
 
-.input-div > div > input{
+.input-div-register{
 	position: absolute;
 	left: 0;
 	top: 0;
@@ -150,6 +144,20 @@ form{
 	font-family: 'poppins', sans-serif;
 }
 
+.input-div-login{
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	border: none;
+	outline: none;
+	background: none;
+	padding: 0.5rem 0.7rem;
+	font-size: 1.2rem;
+	color: #555;
+	font-family: 'poppins', sans-serif;
+}
 
 .link{
 	display: inline;
@@ -167,10 +175,12 @@ form{
 
 .link-regist{
 	float: left;
+	margin-top: 7px;
 }
 
 .link-forgot{
 	float: right;
+	margin-top: 7px;
 }
 
 .btn-login{
@@ -186,7 +196,7 @@ form{
 	color: #fff;
 	font-family: 'Poppins', sans-serif;
 	text-transform: uppercase;
-	margin: 4rem 0;
+	margin: 3.5rem 0;
 	cursor: pointer;
 	transition: .5s;
 }

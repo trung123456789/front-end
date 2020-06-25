@@ -49,8 +49,6 @@ class RegisterPage extends React.Component {
     }
 
     render() {
-        const { registering } = this.props;
-        const { user, submitted } = this.state;
         return (
             <div>
                 <title>My App Login Form</title>
@@ -63,61 +61,67 @@ class RegisterPage extends React.Component {
                         <form action="index.html">
                             <img src={register} alt="register" />
                             <p className="title">Register Form</p>
-
-                            <div className="input-div one">
-                                <div className="i">
-                                    <FontAwesomeIcon icon={faPen} />
+                            <div className="input-div">
+                                <div className="icon">
+                                    <FontAwesomeIcon className="icon-i" icon={faPen} />
                                 </div>
-                                <div className="div">
+                                <div>
                                     <input
                                         type="text"
-                                        className="input"
+                                        className="input-div-register"
                                         placeholder="First Name"
                                         value={this.state.username}
                                         onChange={this.onChangeName}
+                                        onFocus={this.onFocusName}
+                                        onBlur={this.onBlurName}
                                     />
                                 </div>
                             </div>
-
-                            <div className="input-div one">
-                                <div className="i">
-                                    <FontAwesomeIcon icon={faPen} />
+                            <div className="input-div">
+                                <div className="icon">
+                                    <FontAwesomeIcon className="icon-i" icon={faPen} />
                                 </div>
-                                <div className="div">
+                                <div>
                                     <input
                                         type="text"
-                                        className="input"
+                                        className="input-div-register"
                                         placeholder="Last Name"
                                         value={this.state.username}
                                         onChange={this.onChangeName}
+                                        onFocus={this.onFocusName}
+                                        onBlur={this.onBlurName}
                                     />
                                 </div>
                             </div>
-                            <div className="input-div one">
-                                <div className="i">
-                                    <FontAwesomeIcon icon={faUser} />
+                            <div className="input-div">
+                                <div className="icon">
+                                    <FontAwesomeIcon className="icon-i" icon={faUser} />
                                 </div>
-                                <div className="div">
+                                <div>
                                     <input
                                         type="text"
-                                        className="input"
-                                        placeholder="User Name"
+                                        className="input-div-register"
+                                        placeholder="Username"
                                         value={this.state.username}
                                         onChange={this.onChangeName}
+                                        onFocus={this.onFocusName}
+                                        onBlur={this.onBlurName}
                                     />
                                 </div>
                             </div>
-                            <div className="input-div one">
-                                <div className="i">
-                                    <FontAwesomeIcon icon={faLock} />
+                            <div className="input-div">
+                                <div className="icon">
+                                    <FontAwesomeIcon className="icon-i" icon={faLock} />
                                 </div>
-                                <div className="div">
+                                <div>
                                     <input
-                                        type="password"
-                                        className="input"
+                                        type="text"
+                                        className="input-div-register"
                                         placeholder="Password"
                                         value={this.state.username}
                                         onChange={this.onChangeName}
+                                        onFocus={this.onFocusName}
+                                        onBlur={this.onBlurName}
                                     />
                                 </div>
                             </div>
